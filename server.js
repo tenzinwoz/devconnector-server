@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const connectDb = require("./config/db");
+const cors = require("cors");
 require("dotenv").config();
 
 //Connect database
@@ -8,6 +9,7 @@ connectDb();
 
 //init middleware
 app.use(express.json());
+app.use(cors());
 const PORT = process.env.PORT || 8000;
 
 //Define route
